@@ -18,4 +18,11 @@ public class TabsController {
     public void openNewTabWithLink(String url) {
         ((JavascriptExecutor)driver).executeScript("window.open('" + url + "')");
     }
+
+    public void closeAllTabs() {
+        for (String tab : driver.getWindowHandles()) {
+            driver.switchTo().window(tab); //.close();
+            DriverSetup.closeDriver();
+        }
+    }
 }

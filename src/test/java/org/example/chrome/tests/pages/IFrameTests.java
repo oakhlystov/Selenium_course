@@ -6,12 +6,11 @@ import org.example.chrome.tests.helpers.TabsController;
 import org.example.chrome.tests.helpers.Waits;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class IFrameTests {
     private final WebDriver driver;
     Links link = new Links();
-    TabsController ct = new TabsController();
+    TabsController tc = new TabsController();
     Waits w = new Waits();
 
     public IFrameTests() {
@@ -19,16 +18,16 @@ public class IFrameTests {
     }
 
     public void iframeTest() {
-        ct.openNewTabWithLink(link.getUrlIFrame());
-        ct.changeToTheLastTab();
+        tc.openNewTabWithLink(link.getUrlIFrame());
+        tc.changeToTheLastTab();
         String iFrameXPath = "//iframe[@id='youtube-table-cypress']";
 
         try {
-            WebElement iFrame = driver.findElement(By.xpath(iFrameXPath));
-            w.wait5(iFrame);
-            iFrame.click();
+            w.wait5(driver.findElement(By.xpath(iFrameXPath)));
+            driver.findElement(By.xpath(iFrameXPath)).click();
         } catch (Exception e) {
-            System.out.println("Error in finding iFrame or clicking on it. See stack stace above.");
+            e.printStackTrace();
+            System.out.println("Error in finding iFrame or clicking on it. See stack stace above.\n" + e);
         }
     }
 }

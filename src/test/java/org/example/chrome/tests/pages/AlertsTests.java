@@ -11,15 +11,15 @@ public class AlertsTests {
     private final WebDriver driver;
     Links link = new Links();
     AlertsMethods am = new AlertsMethods();
-    TabsController ct = new TabsController();
+    TabsController tc = new TabsController();
 
     public AlertsTests() {
         this.driver = DriverSetup.getDriver();
     }
 
     public void alertsTest() {
-        ct.openNewTabWithLink(link.getUrlAlters());
-        ct.changeToTheLastTab();
+        tc.openNewTabWithLink(link.getUrlAlters());
+        tc.changeToTheLastTab();
 
         for (int i = 1; i <=3; i++) {
             am.findAndClickAlertButton(i);

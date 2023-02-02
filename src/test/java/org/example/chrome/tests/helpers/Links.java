@@ -16,4 +16,7 @@ public class Links {
         return "https://www.wikipedia.org/";
     }
 
+    public final String getUrlSelects() {
+        return "https://kitchen.applitools.com/ingredients/select";
+    }
 }

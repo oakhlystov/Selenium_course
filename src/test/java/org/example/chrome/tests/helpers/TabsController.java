@@ -1,7 +1,7 @@
 package org.example.chrome.tests.helpers;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 
 public class TabsController {
     private final WebDriver driver;
@@ -16,7 +16,8 @@ public class TabsController {
     }
 
     public void openNewTabWithLink(String url) {
-        ((JavascriptExecutor)driver).executeScript("window.open('" + url + "')");
+        driver.switchTo().newWindow(WindowType.TAB);
+        driver.navigate().to(url);
     }
 
     public void closeAllTabs() {

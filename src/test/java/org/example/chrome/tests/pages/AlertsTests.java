@@ -24,6 +24,7 @@ public class AlertsTests {
         for (int i = 1; i <=3; i++) {
             am.findAndClickAlertButton(i);
             Alert alert = driver.switchTo().alert();
+            System.out.println(alert.getText());
             switch (i) {
                 case 1 -> alert.accept();
                 case 2 -> alert.dismiss();

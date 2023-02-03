@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 
 public class IFrameTests {
     private final WebDriver driver;
+    private final String iFrameXPath = "//iframe[@id='youtube-table-cypress']";
     Links link = new Links();
     TabsController tc = new TabsController();
     Waits w = new Waits();
@@ -18,9 +19,10 @@ public class IFrameTests {
     }
 
     public void iframeTest() {
+        link.setExpectedUrl(link.getUrlIFrame());
         tc.openNewTabWithLink(link.getUrlIFrame());
         tc.changeToTheLastTab();
-        String iFrameXPath = "//iframe[@id='youtube-table-cypress']";
+        tc.checkTargetTabUrl(link.getExpectedUrl());
 
         try {
             w.wait5(driver.findElement(By.xpath(iFrameXPath)));

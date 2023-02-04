@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2023.
+ * @oakhlystov
+ */
+
 package org.example;
 
 import org.example.chrome.tests.ChromeTests;

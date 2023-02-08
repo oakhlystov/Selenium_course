@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 @Deprecated
-public class DriverSetupTemp {
+public class DriverSetup {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {

@@ -5,7 +5,6 @@
 
 package com.course.browsers.tests.helpers;
 
-import com.course.browsers.tests.driversetup.DriverSetupTemp;
 import com.course.browsers.tests.driversetup.DriverSingleton;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
@@ -31,7 +30,7 @@ public class TabsController {
     public void closeAllTabs() {
         for (String tab : driver.getWindowHandles()) {
             driver.switchTo().window(tab);
-            DriverSetupTemp.closeDriver();
+            DriverSingleton.closeInstance();
         }
     }
 
